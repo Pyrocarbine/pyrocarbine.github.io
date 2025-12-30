@@ -1,65 +1,60 @@
 import Image from "next/image";
+import ToolBar from './components/toolbar';
+import ProjectCard from './components/projectcard';
+import SkillsCard from './components/skillsCard';
+import * as motion from "motion/react-client";
+import SkillsTabs from "./components/skillstabs";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="min-h-screen w-full font-sans pt-2 bg-zinc-50">
+        <ToolBar />
+        <div className="w-1/2 ml-auto mr-auto mt-40 mb-40 flex flex-row gap-10">
+          <motion.div 
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            className="flex h-50 w-50 shrink-0 grow-0 items-center justify-center rounded-full bg-green-300 text-green-700">
+            <Image src="/images/Profile_image.png" width={400} height={400} className="rounded-full" alt="Picture of Aaron"/>
+          </motion.div>
+          <div> 
+            <motion.h1 
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="text-green-700 text-3xl font-bold mt-auto mb-3 md:text-left"> 
+              Hello, I'm Aaron Han.
+            </motion.h1>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            className="text-black font-bold text-xl md:text-left"> Currently a computer science student at the University of Waterloo, I aspire to build software projects as my way to serve other people. 
+              You can check out my projects, experience, and other information here. 
+            </motion.p>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        <div id="Projects_title" className="w-full bg-gray-900 mt-10 shrink-0">
+          <div className="w-2/3 ml-auto mr-auto pt-10 pb-10">
+            <h2 className="text-white font-bold text-4xl mb-10"> Projects </h2>
+            <div className="flex flex-col gap-10">
+              <div className="flex flex-col gap-10 justify-around lg:flex-row"> 
+                <ProjectCard title="PyroBlog" description="PyroBlog is a blogging platform that allows users to create and share blog posts with others. Built with NextJS with Tailwind, it features a user-friendly interface with personal customizations." link="https://github.com/Pyrocarbine/PyroBlog" />
+                <ProjectCard title="Spotibine" description="Spotibine is a web-based application that allows the user to create custom song sequences on Spotify Web. Users can play medleys on a playlist in shuffle mode without having to manually queue them." link="https://github.com/Pyrocarbine/Spotibine" />     
+              </div>
+              <div className="flex flex-col gap-10 justify-around md:flex-row"> 
+                <ProjectCard title="Octical" description={<>Octical is an application that informs the user of the density of a public space. Users can submit images to the application, which will be analyzed to determine and update crowd density information. </>} link="https://github.com/Octical/Octical"/>
+                <ProjectCard title="Chip-8 Emulator" description={<>A simple emulator to allow Chip-8 files to be runnable with C++. Compatible with keyboard controls and tested with this <a className="text-blue-300" href="https://github.com/Timendus/chip8-test-suite">test suite</a>.</>} link="https://github.com/Pyrocarbine/Chip-8-Emulator" />
+              </div> 
+            </div>
+          </div>
         </div>
-      </main>
+        <div id="Skills_title" className="w-full bg-green-palette-light snap-start shrink-0">
+          <div className="w-2/3 ml-auto mr-auto pt-10 pb-10">
+            <h2 className="text-green-palette-dark font-bold text-4xl mb-10"> Skills </h2>
+            <SkillsTabs />
+          </div>
+        </div>
     </div>
   );
 }
