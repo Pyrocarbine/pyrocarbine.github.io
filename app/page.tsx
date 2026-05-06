@@ -2,7 +2,7 @@ import Image from "next/image";
 import ToolBar from './components/toolbar';
 import ProjectCard from './components/projectcard';
 import * as motion from "motion/react-client";
-import SkillsTabs from "./components/skillsTabs";
+import SkillsTabs from "./components/skillstabs";
 import Footer from "./components/footer";
 
 export default function Home() {

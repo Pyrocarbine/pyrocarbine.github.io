@@ -3,7 +3,7 @@ import * as React from 'react';
 import Tab from "@mui/material/Tab";
 import Tabs from '@mui/material/Tabs';
 import Box from '@mui/material/Box';
-import SkillsCard from './skillsCard';
+import SkillsCard from './skillscard';
 
 
 function CustomTabPanel(props: {children?: React.ReactNode; index: number; value: number}){
