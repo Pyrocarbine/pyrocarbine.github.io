@@ -6,13 +6,13 @@ export default function ProjectCard({ title, description, link }:
     {title: string; description: React.ReactNode; link: string}
 ) {
     return (
-        <InView threshold={0.4}>
+        <InView threshold={0.4} triggerOnce>
             {({ ref, inView}) => (
             <motion.div 
                 ref={ref}
                 initial={{ opacity: 0, y: 20 }}
                 animate={inView? {opacity: 1, y: 0 } : {opacity: 0, y: 20 }}
-                className="max-w-md bg-white border flex flex-col border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+                className="w-full bg-white border flex flex-col border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
                 <a href="#">
                     <img className="rounded-t-lg" src="/docs/images/blog/image-1.jpg" alt="" />
                 </a>

@@ -1,15 +1,15 @@
 import Image from "next/image";
 import ToolBar from './components/toolbar';
 import ProjectCard from './components/projectcard';
-import SkillsCard from './components/skillsCard';
 import * as motion from "motion/react-client";
-import SkillsTabs from "./components/skillstabs";
+import SkillsTabs from "./components/skillsTabs";
+import Footer from "./components/footer";
 
 export default function Home() {
   return (
-    <div className="min-h-screen w-full font-sans pt-2 bg-zinc-50">
+    <div className="min-h-screen w-full font-sans pt-2 bg-zinc-50 overflow-x-hidden">
         <ToolBar />
-        <div className="w-1/2 ml-auto mr-auto mt-40 mb-40 flex flex-row gap-10">
+        <div className="w-full md:w-1/2 ml-auto mr-auto mt-20 mb-20 flex flex-row gap-10">
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -38,7 +38,7 @@ export default function Home() {
           <div className="w-2/3 ml-auto mr-auto pt-10 pb-10">
             <h2 className="text-white font-bold text-4xl mb-10"> Projects </h2>
             <div className="flex flex-col gap-10">
-              <div className="flex flex-col gap-10 justify-around lg:flex-row"> 
+              <div className="flex flex-col gap-10 justify-around md:flex-row"> 
                 <ProjectCard title="PyroBlog" description="PyroBlog is a blogging platform that allows users to create and share blog posts with others. Built with NextJS with Tailwind, it features a user-friendly interface with personal customizations." link="https://github.com/Pyrocarbine/PyroBlog" />
                 <ProjectCard title="Spotibine" description="Spotibine is a web-based application that allows the user to create custom song sequences on Spotify Web. Users can play medleys on a playlist in shuffle mode without having to manually queue them." link="https://github.com/Pyrocarbine/Spotibine" />     
               </div>
@@ -55,6 +55,7 @@ export default function Home() {
             <SkillsTabs />
           </div>
         </div>
+        <Footer />
     </div>
   );
 }

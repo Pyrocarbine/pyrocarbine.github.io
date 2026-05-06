@@ -15,7 +15,7 @@ function CustomTabPanel(props: {children?: React.ReactNode; index: number; value
             {...other}
             id={`tabpanel_skills_${index}`}
             >
-                {value === index &&  <div className="mt-10 h-50 flex flex-col gap-10 flex-wrap justify-around lg:flex-row">{children}</div>}
+                {value === index &&  <div className="mt-10 grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-8">{children}</div>}
         </div>
 
     )
@@ -28,7 +28,7 @@ export default function SkillsTabs() {
     }
     return (
     <Box>
-        <Tabs value={value} onChange={handleChange}>
+        <Tabs value={value} onChange={handleChange} variant="scrollable" scrollButtons={false}>
             <Tab label="Programming Languages" />
             <Tab label="Frameworks & Libraries" />
             <Tab label="Other Tools" />
