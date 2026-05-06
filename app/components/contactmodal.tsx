@@ -34,16 +34,16 @@ export default function ContactModal({ open, onClose }: { open: boolean; onClose
                 <p className="text-sm text-gray-600 mb-4">Reach out via any of the links below.</p>
                 <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
                     <IconButton href="mailto:a45han@uwaterloo.ca" label="Email">
-                        <img src="/icons/mail.svg" alt="Email"></img>
+                        <img src="icons/mail.svg" alt="Email"></img>
                     </IconButton>
                     <IconButton href="https://github.com/Pyrocarbine/" label="GitHub">
-                        <img src="/icons/github.svg" alt="Github"></img>
+                        <img src="icons/github.svg" alt="Github"></img>
                     </IconButton>
                     <IconButton href="https://www.linkedin.com/in/aaron-han-08ba55290/" label="LinkedIn">
-                        <img src="/icons/linkedin.svg" alt="LinkedIn"></img>
+                        <img src="icons/linkedin.svg" alt="LinkedIn"></img>
                     </IconButton>
                     <IconButton href="https://www.instagram.com/aaronhan06/" label="Instagram">
-                        <img src="/icons/instagram.svg" alt="Instagram"></img>
+                        <img src="icons/instagram.svg" alt="Instagram"></img>
                     </IconButton>
                 </div>
                 <div className="mt-6 text-right">
