@@ -50,7 +50,7 @@ export default function Home() {
           </div>
         </div>
         <div id="Skills_title" className="w-full bg-green-palette-light snap-start shrink-0">
-          <div className="w-2/3 ml-auto mr-auto pt-10 pb-10">
+          <div className="w-2/3 ml-auto mr-auto pt-10 pb-15">
             <h2 className="text-green-palette-dark font-bold text-4xl mb-10"> Skills </h2>
             <SkillsTabs />
           </div>
